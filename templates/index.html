@@ -17,6 +17,11 @@
   </head>
   <body>
     {% include 'navbar.html' %}
-    <h1>Hello World</h1
+    <h1>Hello World</h1>
+    {% for student in students%}
+      <div class='card p-2 mt-2'>
+        {{student['last_name']}},                   {{student['first_name']}}
+      </div>
+    {% endfor %}
   </body
 </html>
