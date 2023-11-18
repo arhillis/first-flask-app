@@ -36,6 +36,9 @@ STUDENTS = [{
 def hello_world():
   return render_template("index.html", students=STUDENTS)
 
+@app.route("/students")
+def get_students():
+    return STUDENTS
 
 if __name__ == '__main__':
   app.run(host='0.0.0.0', port=8080)
