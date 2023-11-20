@@ -1,5 +1,2 @@
 Flask
-flask-cors
-mysql
 gunicorn
-fauna
