@@ -1,5 +1,4 @@
 Flask
 flask-cors
-sqlite3
 xata
 gunicorn
