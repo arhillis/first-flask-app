@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 from flask_cors import CORS
 
-from data import get_students
+#from data import get_students
 
 
 app = Flask(__name__)
