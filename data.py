@@ -1,27 +1,14 @@
+import os
+from xata.client import XataClient
+ 
+client = XataClient(api_key=os.environ["XATA_API_KEY"], db_url="https://Andrielle-Hillis-s-workspace-ksvpaa.us-east-1.xata.sh/db/students")
 
-#9xwXZcpC4TJtUdG7yowvuQ
-
-
-
-import sqlite3
-
-con = sqlite3.connect("students.db")
-db = con.cursor()
-
-def main():
-    create_student('George', 'Knightly', 10)
-    students = fetch_students()
-    print(students)
-
-def create_student(first_name, last_name, grade_level):
-    grade_level = int(grade_level)
-    db.execute("INSERT INTO students (first_name, last_name, grade_level) VALUES(?, ?, ?)", (first_name, last_name, grade_level))
-    con.commit();
-
-def fetch_students():
-    students = db.execute("SELECT * FROM students")
-    return students.fetchall()
-
-
-if __name__ == "__main__":
-    main()
+data = client.data().query("students", {
+    "columns": [
+        "id",
+        "first_name",
+        "last_name",
+        "grade_level"
+    ]
+})
+print(data)
