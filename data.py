@@ -1,8 +1,7 @@
 import os
-import typing_extensions
-import xata 
+from xata import XataClient
  
-client = xata.XataClient(api_key=os.getenv("XATA_API_KEY"), db_url="https://Andrielle-Hillis-s-workspace-ksvpaa.us-east-1.xata.sh/db/students")
+client = XataClient(api_key=os.getenv("XATA_API_KEY"), db_url="https://Andrielle-Hillis-s-workspace-ksvpaa.us-east-1.xata.sh/db/students")
 
 def main():
     students = get_students()
